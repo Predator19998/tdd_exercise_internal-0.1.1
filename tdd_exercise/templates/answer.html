@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answer</title>
+</head>
+<body>
+    <h1>{{ clue.clue_text }}</h1>
+    <p>{{ clue.entry.entry_text }}</p>
+    
+    {% if other_entries %}
+        <table>
+            <tr>
+                <th>Other Clues</th>
+            </tr>
+            {% for entry in other_entries %}
+                <tr>
+                    <td>{{ entry.clue_text }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>This is the only appearance of this clue.</p>
+    {% endif %}
+</body>
+</html>

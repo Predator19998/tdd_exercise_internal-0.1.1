@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drill</title>
+</head>
+<body>
+    <h1>Clue Drill</h1>
+    <p>{{ clue.clue_text }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="clue_id" value="{{ clue.id }}">
+        <button type="submit">Submit</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
